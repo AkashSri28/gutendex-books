@@ -1,3 +1,7 @@
+.arrowIcon{
+    color: #5E56E7;
+}
+
 .categoriesContainer {
     text-align: left;
     padding: 40px 120px;
@@ -7,15 +11,25 @@
 }
 
 .categoryCard{
-    color: #5E56E7;
+    color: #000;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border: none;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     background-color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.categoryCard svg{
+    font-size: 1.5rem;
+    margin-right: 10px;
+    align-self: center; 
+    color: #5E56E7;
 }
 
 .categoriesGrid{
@@ -25,6 +39,10 @@
     margin-top: 50px;
 }
 
+.categoryLabel{
+    display: flex;
+}
+
 .pageDescription{
     margin-left: 10px;
 }
@@ -32,5 +50,25 @@
 .pageTitle{
     color: #5E56E7;
     margin-left: 10px;
+}
+
+@media (max-width: 768px){
+    .categoriesContainer{
+        background-color: #F8F7FF;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .categoriesGrid{
+        grid-template-columns: 1fr;
+    }
+
+    .pageTitle{
+        font-size: 3rem;
+    }
+
+    .pageDescription{
+        font-size: 1.1rem;
+    }
 }
 

@@ -7,12 +7,13 @@ import { ImLab } from "react-icons/im";
 function CategoriesPage() {
     const categories = [
         { name: "Fiction", icon: <ImLab /> },
-        { name: "Philosophy", icon: <FaBalanceScale /> },
         { name: "Drama", icon: <FaTheaterMasks /> },
-        { name: "History", icon: <FaHistory /> },
         { name: "Humour", icon: <FaLaugh /> },
-        { name: "Adventure", icon: <FaMountain /> },
-        { name: "Politics", icon: <FaLandmark /> }
+        { name: "Politics", icon: <FaLandmark /> },
+        { name: "Philosophy", icon: <FaBalanceScale /> },
+        { name: "History", icon: <FaHistory /> },
+        { name: "Adventure", icon: <FaMountain /> }
+        
     ];
 
     const navigate = useNavigate();
@@ -33,8 +34,8 @@ function CategoriesPage() {
                     onClick={()=>handleCategoryClick(category)}
                     className={styles.categoryCard}
                 >
-                    <span>{category.icon} {category.name}</span>
-                    <span><FaArrowRight /></span>
+                    <span className={styles.categoryLabel}>{category.icon} {category.name.toUpperCase()}</span>
+                    <span><FaArrowRight className={styles.arrowIcon} /></span>
                 </button>
             
             )}
