@@ -1,0 +1,45 @@
+.backBtn{
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.bookCard{
+    width:150px;
+}
+
+.bookCover{
+    width: 100px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.booksGrid{
+    background-color: #F8F7FF;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px;
+    height: 550px;
+    overflow-y: auto;
+}
+
+.booksPageContainer {
+    text-align: left;
+    padding: 40px 120px;
+    min-height: calc(100vh - 200px); 
+    margin: 50px 0;
+}
+
+.pageTitle{
+    color: #5E56E7;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput{
+    width: 100%;
+    padding: 5px;
+    background-color: #F0F0F6;
+    border: none;
+}

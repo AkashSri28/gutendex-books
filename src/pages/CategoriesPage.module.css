@@ -1,0 +1,36 @@
+.categoriesContainer {
+    text-align: left;
+    padding: 40px 120px;
+    background-color: #F8F7FF;
+    min-height: calc(100vh - 200px); 
+    margin: 50px 0;
+}
+
+.categoryCard{
+    color: #5E56E7;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.categoriesGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 30px;
+    margin-top: 50px;
+}
+
+.pageDescription{
+    margin-left: 10px;
+}
+
+.pageTitle{
+    color: #5E56E7;
+    margin-left: 10px;
+}
+
