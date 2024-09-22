@@ -14,7 +14,7 @@ const useFetchBooks = ()=>{
         }
         setLoading(true);
         console.log(searchTerm);
-        const currentPage = fetchMore? page+1: page;
+        const currentPage = fetchMore? page+1: 1;
         if(fetchMore){
             console.log("fetching more books");
             console.log(page);
@@ -24,7 +24,8 @@ const useFetchBooks = ()=>{
                 params: {
                     page: currentPage,
                     topic: category,
-                    search: searchTerm
+                    search: searchTerm,
+                    mime_type: "image/jpeg"
                 }
             })
             setPage(currentPage);

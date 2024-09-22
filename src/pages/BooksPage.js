@@ -34,6 +34,25 @@ function BooksPage() {
     const handleSearch = (e)=>{
         setSearchTerm(e.target.value)
     }
+
+    const handleBookClick = (book)=>{
+        let bookUrl = '';
+       
+        if (book.formats['text/html'] && !book.formats['text/html'].includes('zip')) {
+            bookUrl = book.formats['text/html'];  
+        } else if (book.formats['application/pdf'] && !book.formats['application/pdf'].includes('zip')) {
+            bookUrl = book.formats['application/pdf'];  
+        } else if (book.formats['text/plain'] && !book.formats['text/plain'].includes('zip')) {
+            bookUrl = book.formats['text/plain'];  
+        }
+
+        if(bookUrl){
+            window.open(bookUrl, '_blank')
+        }
+        else{
+            alert('No viewable version available');
+        }
+    }
     
   return (
     <div className={styles.booksPageContainer}>
@@ -53,7 +72,11 @@ function BooksPage() {
         >
             {books.length>0?
             (books.map((book)=>(
-                <div key={book.id} className={styles.bookCard}>
+                <div 
+                    key={book.id} 
+                    className={styles.bookCard}
+                    onClick={()=>handleBookClick(book)}
+                >
                     <img
                         src={book.formats["image/jpeg"]}
                         className={styles.bookCover}
