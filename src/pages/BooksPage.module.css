@@ -66,7 +66,7 @@
 
     .booksGrid{
         justify-content: center;
-        height: auto;
+        height: calc(100vh - 150px);
         padding: 10px;
     }
 

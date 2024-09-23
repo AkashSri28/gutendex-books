@@ -23,7 +23,7 @@ function BooksPage() {
     const handleScroll = ()=>{
         if(booksGridRef.current){
             const {scrollTop, scrollHeight, clientHeight} = booksGridRef.current;
-            // console.log(scrollTop, scrollHeight, clientHeight);
+            // console.log(Math.ceil(scrollTop), scrollHeight, clientHeight);
             if(scrollTop+clientHeight >= scrollHeight - 300){
                 // console.log("reached end");
                 fetchBooks(category, searchTerm, true)
