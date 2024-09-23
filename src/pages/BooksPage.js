@@ -84,7 +84,7 @@ function BooksPage() {
                     <p>{book.title.toUpperCase()}</p>
                     {book.authors.map((author)=>{
                         const [lastName, firstName] = author.name.split(', ')
-                        return <p>{`${firstName} ${lastName}`}</p>
+                        return <p className={styles.bookAuthor}>{`${firstName} ${lastName}`}</p>
                     }                        
                     )}
                 </div>
