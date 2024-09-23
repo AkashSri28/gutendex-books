@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { FaArrowLeft } from 'react-icons/fa'
+import { FaArrowLeft, FaSearch, FaTimes } from 'react-icons/fa'
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from './BooksPage.module.css';
 import useFetchBooks from '../hooks/useFetchBooks';
@@ -53,18 +53,34 @@ function BooksPage() {
             alert('No viewable version available');
         }
     }
+
+    const clearSearch = ()=>{
+        console.log(searchTerm)
+        setSearchTerm('');
+        console.log(searchTerm)
+    }
     
   return (
     <div className={styles.booksPageContainer}>
         <h1 className={styles.pageTitle}>
             <FaArrowLeft className={styles.backBtn} onClick={handleBack}/>{category}
         </h1>
-        <input
-            type='text'
-            placeholder='Search'
-            className={styles.searchInput}
-            onChange={handleSearch}
-        />
+        <div className={styles.searchContainer}>
+            <input
+                type='text'
+                placeholder='Search'
+                className={styles.searchInput}
+                onChange={handleSearch}
+                value={searchTerm}
+            />
+
+            {searchTerm && (
+                <FaTimes className={styles.cancelIcon} onClick={clearSearch}/>
+            )}
+            <FaSearch className={styles.searchIcon}/>
+
+        </div>
+        
         <div 
             className={styles.booksGrid}
             onScroll={handleScroll}
