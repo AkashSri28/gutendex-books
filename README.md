@@ -1,9 +1,9 @@
-#Gutenberg Book Finder
+# Gutenberg Book Finder
 
 Gutenberg Book Finder is a web application built with React that allows users to browse and search for books from the Gutenberg Project repository using the Gutendex API. The app provides a responsive UI with category browsing, infinite scrolling, and search functionality to display books based on user input.
 
 
-##Features
+## Features
 
 Browse by Category: Select a book genre or category to explore related books.
 
@@ -18,7 +18,7 @@ View Book Formats: Users can click on a book to open the book in HTML, PDF, or p
 Fallback Alerts: Alerts the user if no viewable version of the book is available.
 
 
-##Technologies Used
+## Technologies Used
 
 React: JavaScript library for building user interfaces.
 
@@ -31,7 +31,7 @@ React Icons: For adding icons like search, back button, and loading spinners.
 Axios/Fetch: For making API requests.
 
 
-##Installation
+## Installation
 
 To run this project locally, follow these steps:
 
@@ -52,7 +52,7 @@ npm start
 The app will be available at http://localhost:3000 in your web browser.
 
 
-##Usage
+## Usage
 
 Open the app in the browser.
 
@@ -65,12 +65,12 @@ Scroll to explore more books, and click on any book to open it in the preferred 
 If the selected book is not available in HTML, PDF, or TXT, an alert will notify the user.
 
 
-##API Integration
+## API Integration
 
 This project integrates with the Gutendex API, which is an extension of the Gutenberg Project data. The API returns book data in JSON format, and the application uses this data to display book details and formats.
 
 
-##Gutendex API Base URL:
+## Gutendex API Base URL:
 
 http://skunkworks.ignitesol.com:8000/
 
@@ -79,7 +79,7 @@ Endpoints:
 GET /books: Returns a list of books. Supports filtering via query parameters such as topic, search, mime_type, and languages.
 
 
-##Key Components:
+## Key Components:
 
 CategoriesPage.js: Displays the main page with book categories.
 BooksPage.js: Displays books related to the selected category, with infinite scrolling and search functionality.
@@ -88,7 +88,7 @@ Utility Functions:
 useFetchBooks.js: Contains custom hooks and helper functions for making API calls (e.g., fetching books, handling pagination).
 
 
-##Note: 
+## Note: 
 
 Please follow below steps to allow fetching data from API in Chrome
 
