@@ -5,10 +5,15 @@
 
 .bookAuthor{
     color: #A0A0A0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .bookCard{
-    width:100px;
+    width:120px;
+    overflow: hidden;
 }
 
 .bookCard:hover {
@@ -16,9 +21,13 @@
     cursor: pointer;
 }
 
+.bookCard:hover .bookTitle {
+    text-decoration: underline;
+}
+
 .bookCover{
     width: 100%;
-    height: 150px;
+    height: 180px;
     border-radius: 10px;
 }
 
@@ -29,17 +38,26 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px 100px;
-    gap: 30px;
-    height: calc(100vh - 150px);
+    gap: 10px 30px;
+    height: calc(100vh - 350px);
     overflow-y: auto;
 }
 
 .booksPageContainer {
     text-align: left;
     padding: 40px 0px;
-    /* padding: 20px 50px; */
     min-height: calc(100vh - 200px); 
     margin: 50px 0;
+}
+
+.bookTitle{
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: -webkit-box; /* Enables truncation for multiple lines */
+    -webkit-line-clamp: 2; /* Limits to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cancelIcon{
@@ -48,6 +66,12 @@
     right: 10px;
     color: #A0A0A0;
     font-size: 1.2rem;
+}
+
+.loadingContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pageTitle{
@@ -79,25 +103,49 @@
     border: none;
 }
 
+.spinner{
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #5E56E7;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @media (max-width: 768px){
     .backBtn{
         font-size: 1.8rem;
         margin-left: 20px;
     }
     .bookCard{
-        width: 120px;
+        width: 100px;
         margin-bottom: 20px;
         font-size: 0.7rem;
+    }
+    
+    .bookCover{
+        height: 150px;
     }
 
     .booksGrid{
         justify-content: center;
-        height: calc(100vh - 150px);
+        height: calc(100vh - 200px);
         padding: 10px;
     }
 
     .booksPageContainer{
         padding: 0;
+        margin: 20px 0;
+    }
+
+    .pageTitle{
         margin: 20px 0;
     }
 
@@ -107,6 +155,7 @@
 
     .searchContainer{
         position: relative;
+        margin: 20px 0;
     }
     
     .searchIcon{

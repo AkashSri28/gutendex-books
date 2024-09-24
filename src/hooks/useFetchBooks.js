@@ -47,7 +47,7 @@ const useFetchBooks = ()=>{
     }
     
 
-  return {books, fetchBooks}
+  return {books, loading,  fetchBooks}
 }
 
 export default useFetchBooks;

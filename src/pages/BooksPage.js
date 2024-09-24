@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { FaArrowLeft, FaSearch, FaTimes } from 'react-icons/fa'
+import { FaArrowLeft, FaSearch, FaSpinner, FaTimes } from 'react-icons/fa'
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from './BooksPage.module.css';
 import useFetchBooks from '../hooks/useFetchBooks';
 
 function BooksPage() {
     const {category} = useParams()
-    const {books, fetchBooks} = useFetchBooks();
+    const {books, loading, fetchBooks} = useFetchBooks();
     const booksGridRef = useRef(null);
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('')
@@ -80,33 +80,41 @@ function BooksPage() {
             <FaSearch className={styles.searchIcon}/>
 
         </div>
-        
+    
         <div 
             className={styles.booksGrid}
             onScroll={handleScroll}
             ref={booksGridRef}
         >
-            {books.length>0?
-            (books.map((book)=>(
-                <div 
-                    key={book.id} 
-                    className={styles.bookCard}
-                    onClick={()=>handleBookClick(book)}
-                >
-                    <img
-                        src={book.formats["image/jpeg"]}
-                        className={styles.bookCover}
-                    />
-                    <p>{book.title.toUpperCase()}</p>
-                    {book.authors.map((author)=>{
-                        const [lastName, firstName] = author.name.split(', ')
-                        return <p className={styles.bookAuthor}>{`${firstName} ${lastName}`}</p>
-                    }                        
-                    )}
+            
+            {(books.length>0?
+                (books.map((book)=>(
+                    <div 
+                        key={book.id} 
+                        className={styles.bookCard}
+                        onClick={()=>handleBookClick(book)}
+                    >
+                        <img
+                            src={book.formats["image/jpeg"]}
+                            className={styles.bookCover}
+                        />
+                        <p className={styles.bookTitle}>{book.title.toUpperCase()}</p>
+                        {book.authors.map((author)=>{
+                            const [lastName, firstName] = author.name.split(', ')
+                            return <p className={styles.bookAuthor}>{`${firstName} ${lastName}`}</p>
+                        }                        
+                        )}
+                    </div>
+                ))):''
+            )}
+
+            {loading ? (
+                <div className={styles.loadingContainer}>
+                    <FaSpinner className={styles.spinner} /> {/* Loading spinner */}
+                    <p>Loading books...</p>
                 </div>
-            ))):
-            (<p>No Books found</p>)
-            }
+            ) : ''}
+            
         </div>
     </div>
   )
