@@ -1,71 +1,58 @@
-# Getting Started with Create React App
+Gutenberg Book Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Gutenberg Book Finder is a web application built with React that allows users to browse and search for books from the Gutenberg Project repository using the Gutendex API. The app provides a responsive UI with category browsing, infinite scrolling, and search functionality to display books based on user input.
 
-## Available Scripts
+Features
+Browse by Category: Select a book genre or category to explore related books.
+Infinite Scrolling: Books are dynamically loaded as the user scrolls down the page.
+Search Functionality: Users can search for books by title or author within the selected category.
+Responsive Design: Optimized for both desktop and mobile devices.
+View Book Formats: Users can click on a book to open the book in HTML, PDF, or plain text format.
+Fallback Alerts: Alerts the user if no viewable version of the book is available.
+Technologies Used
+React: JavaScript library for building user interfaces.
+Gutendex API: Provides access to the Gutenberg Project's catalog of books.
+CSS Modules: Modular CSS for styling components.
+React Icons: For adding icons like search, back button, and loading spinners.
+Axios/Fetch: For making API requests.
+Installation
+To run this project locally, follow these steps:
 
-In the project directory, you can run:
+Clone the repository:
+git clone https://github.com/AkashSri28/gutenberg-book-finder.git
+cd gutenberg-book-finder
+Install dependencies:
+npm install
 
-### `npm start`
+Start the development server:
+npm start
+The app will be available at http://localhost:3000 in your web browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Usage
+Open the app in the browser.
+Choose a book category from the main page.
+Use the search bar to filter books by title or author.
+Scroll to explore more books, and click on any book to open it in the preferred format.
+If the selected book is not available in HTML, PDF, or TXT, an alert will notify the user.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+API Integration
+This project integrates with the Gutendex API, which is an extension of the Gutenberg Project data. The API returns book data in JSON format, and the application uses this data to display book details and formats.
 
-### `npm test`
+Gutendex API Base URL:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+http://skunkworks.ignitesol.com:8000/
+Endpoints:
+GET /books: Returns a list of books. Supports filtering via query parameters such as topic, search, mime_type, and languages.
 
-### `npm run build`
+Key Components:
+CategoriesPage.js: Displays the main page with book categories.
+BooksPage.js: Displays books related to the selected category, with infinite scrolling and search functionality.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Utility Functions:
+useFetchBooks.js: Contains custom hooks and helper functions for making API calls (e.g., fetching books, handling pagination).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Note: Please follow below steps to allow fetching data from API in Chrome
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To allow insecure content on individual sites within Chrome, click on the lock icon in the URL bar, then click 'Site settings'.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# gutendex-books
+There you will see a list of various permissions the page has. Choose 'Allow' next to 'Insecure content'.
