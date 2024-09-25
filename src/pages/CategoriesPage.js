@@ -23,10 +23,14 @@ function CategoriesPage() {
     }
   return (
     <div className={styles.categoriesContainer}>
-        <h1 className={styles.pageTitle}>Gutenberg Project</h1>
-        <p className={styles.pageDescription}>A social cataloging website that allows you to freely seatch its database
-            of books, annotations, and reviews.
-        </p>
+        <div className={styles.header}>
+            <h1 className={styles.pageTitle}>Gutenberg Project</h1>
+            <p className={styles.pageDescription}>A social cataloging website that allows you to freely seatch its database
+                of books, annotations, and reviews.
+            </p>
+
+        </div>
+        
         <div className={styles.categoriesGrid}>
             {categories.map((category)=> 
                 <button 

@@ -46,6 +46,10 @@
     display: flex;
 }
 
+.header{
+    background-image: url('../assets/icons/Pattern.svg');
+}
+
 .pageDescription{
     margin-left: 10px;
 }
